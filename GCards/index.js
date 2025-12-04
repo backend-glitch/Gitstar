@@ -33,37 +33,54 @@ app.get("/github", async (req, res) => {
     }
 
     const svg = `
-      <svg width="600" height="180" xmlns="http://www.w3.org/2000/svg">
+      <svg width="800" height="180" xmlns="http://www.w3.org/2000/svg">
+
+        <!-- Animated Gradient -->
         <defs>
           <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#6a11cb"/>
-            <stop offset="100%" stop-color="#2575fc"/>
+            <stop offset="0%" stop-color="#ff8a00">
+              <animate attributeName="stop-color"
+                values="#ff8a00; #e52e71; #9c27b0; #ff8a00"
+                dur="8s" repeatCount="indefinite" />
+            </stop>
+
+            <stop offset="100%" stop-color="#e52e71">
+              <animate attributeName="stop-color"
+                values="#e52e71; #9c27b0; #ff8a00; #e52e71"
+                dur="8s" repeatCount="indefinite" />
+            </stop>
           </linearGradient>
         </defs>
 
-        <rect width="100%" height="100%" rx="16" fill="url(#grad)" />
+        <rect width="100%" height="100%" rx="20" fill="url(#grad)" />
 
-        <image href="${data.avatar_url}" x="20" y="20" height="140" width="140" clip-path="circle(70px at 70px 70px)" />
+        <!-- Avatar -->
+        <image href="${data.avatar_url}" x="20" y="20" height="140" width="140"
+          clip-path="circle(70px at 70px 70px)" />
 
+        <!-- Name -->
         <text x="180" y="55" font-size="28" fill="white" font-weight="bold">
           ${data.name || data.login}
         </text>
 
+        <!-- Username -->
         <text x="180" y="85" font-size="18" fill="#f0f0f0">
           @${data.login}
         </text>
 
+        <!-- Stats -->
         <text x="180" y="125" font-size="18" fill="white">
           ⭐ Repos: ${data.public_repos}
         </text>
 
-        <text x="290" y="125" font-size="18" fill="white">
+        <text x="370" y="125" font-size="18" fill="white">
           👥 Followers: ${data.followers}
         </text>
 
-        <text x="450" y="125" font-size="18" fill="white">
+        <text x="580" y="125" font-size="18" fill="white">
           🔂 Following: ${data.following}
         </text>
+
       </svg>
     `;
 
@@ -75,10 +92,11 @@ app.get("/github", async (req, res) => {
   }
 });
 
-app.listen(4000, () => {
-  console.log("Local server running:");
-  console.log("➡ http://localhost:4000/github?user=octocat");
-});
+
+//const PORT = process.env.PORT || 2000;
+//app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
+
+export default app;
 
 
 
