@@ -35,6 +35,10 @@ To use any badge in your GitHub README:
 1. Copy the badge URL.
 2. Paste it into your README using markdown:
 
-```md
-<img src="https://gitstar-alpha.vercel.app/?date=2025-12-31&title=Countdown" />
 
+## 👥 TO COLLABORATE
+* Fork
+* Edit the Idea
+* Send the PR
+
+---
