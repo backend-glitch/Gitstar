@@ -21,8 +21,8 @@ You can check out my live projects and badges below!
 | Project Name | Description | Demo Badge |Demo Link|
 |--------------|-------------|--------------|-----|
 | **Countdown Badge** | Shows a countdown to any date. Can be embedded in your README as a dynamic SVG. | <img src="https://gitstar-alpha.vercel.app/?date=2025-12-31&title=Countdown" /> |<p> https://gitstar-alpha.vercel.app/?date=2025-12-31&title=Countdown </p>|
-| **Mood Status Badge** | Shows your daily “mood” or status dynamically. | *(Coming Soon)* |....|
-| **Profile Views Badge** | Tracks how many people visited your profile. | *(Coming Soon)* |....|
+| **Cards** | Show your cool status on a gradient card. | <img src="https://gitstar-s9jh.vercel.app/card?title=Hello💗World&color1=pink&color2=red" />|<p>https://gitstar-s9jh.vercel.app/card?title=Hello💗World&color1=pink&color2=red </p>|
+| **Gcards** | personal porfoli card. | <img src = "https://gitstar-xcj1.vercel.app/github?user=backend-glitch"> |https://gitstar-xcj1.vercel.app/github?user=octocat|
 | **README Streak Timer** | Counts days since a project started or until a goal. | *(Coming Soon)* |....|
 | **Custom JS / CSS Badge Generator** | Generate custom badges with your own label, color, and text. | *(Coming Soon)* |.....|
 
