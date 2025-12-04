@@ -16,6 +16,7 @@ function errorSVG(message, color = "red") {
 
 app.get("/github", async (req, res) => {
   const username = req.query.user;
+  const emoji = req.query.emoji || ""; // Optional emoji parameter
 
   if (!username) {
     return res.type("image/svg+xml").send(errorSVG("Error: ?user=username required"));
@@ -54,9 +55,10 @@ app.get("/github", async (req, res) => {
 
         <rect width="100%" height="100%" rx="20" fill="url(#grad)" />
 
-        <!-- Avatar -->
-        <image href="${data.avatar_url}" x="20" y="20" height="140" width="140"
-          clip-path="circle(70px at 70px 70px)" />
+        <!-- Emoji Avatar -->
+        <text x="60" y="100" font-size="60" text-anchor="middle" dominant-baseline="middle">
+          ${emoji}
+        </text>
 
         <!-- Name -->
         <text x="180" y="55" font-size="28" fill="white" font-weight="bold">
@@ -94,7 +96,8 @@ app.get("/", (req, res) => {
   res.send(`
     <h2>GitHub SVG Card API</h2>
     <p>Use <code>/github?user=USERNAME</code> to get a card.</p>
-    <p>Example: <a href="/github?user=octocat">/github?user=octocat</a></p>
+    <p>You can also add <code>&emoji=😎</code> to show an emoji instead of avatar.</p>
+    <p>Example: <a href="/github?user=octocat&emoji=😎">/github?user=octocat&emoji=😎</a></p>
   `);
 });
 
