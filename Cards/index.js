@@ -15,8 +15,8 @@ app.get("/", (req, res) => {
 //ex: /card?title=Hello&color1=ff00ff&color2=00ffff
 app.get("/card", (req, res) => {
   const title = req.query.title || "My Gradient Card";
-  const color1 = req.query.color1 || "ff7eb3";
-  const color2 = req.query.color2 || "65c7f7";
+  const color1 = req.query.color1 || pink;
+  const color2 = req.query.color2 || purple;
 
   const svg = `
   <svg width="450" height="200" xmlns="http://www.w3.org/2000/svg">
