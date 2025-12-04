@@ -18,9 +18,9 @@ You can check out my live projects and badges below!
 
 ## 💡 Projects / Ideas
 
-| Project Name | Description | Demo / Badge |Link|
+| Project Name | Description | Demo Badge |Demo Link|
 |--------------|-------------|--------------|-----|
-| **Countdown Badge** | Shows a countdown to any date. Can be embedded in your README as a dynamic SVG. | <img src="https://gitstar-alpha.vercel.app/?date=2025-12-31&title=Countdown" /> |<a src="https://gitstar-alpha.vercel.app/?date=2025-12-31&title=Countdown">Link</a>
+| **Countdown Badge** | Shows a countdown to any date. Can be embedded in your README as a dynamic SVG. | <img src="https://gitstar-alpha.vercel.app/?date=2025-12-31&title=Countdown" /> |<p> https://gitstar-alpha.vercel.app/?date=2025-12-31&title=Countdown </p>|
 | **Mood Status Badge** | Shows your daily “mood” or status dynamically. | *(Coming Soon)* |....|
 | **Profile Views Badge** | Tracks how many people visited your profile. | *(Coming Soon)* |....|
 | **README Streak Timer** | Counts days since a project started or until a goal. | *(Coming Soon)* |....|
