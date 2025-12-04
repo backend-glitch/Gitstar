@@ -1,3 +1,5 @@
+## Demo Badge
+<img src="https://gitstar-alpha.vercel.app/?date=2025-12-20&title=Holidays⛄" />
 
 ## 📌 Query Parameters
 
