@@ -8,7 +8,7 @@
 | `title`  | Yes      | custom card |
 | `color1`  | yes      | custom color-1 |
 | `color2`   | yes      | custom color-2 |
-| `border`  | No     | custom border |
+| `border`  | NO/Upcoming     | custom border |
 
 ## 🖼 Example Badge in README
 
