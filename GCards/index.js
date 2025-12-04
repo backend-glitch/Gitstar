@@ -1,20 +1,24 @@
 import express from "express";
-import fetch from "node-fetch";
 
 const app = express();
+
+// Helper to generate error SVG
+function errorSVG(message, color = "red") {
+  return `
+    <svg width="400" height="60" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="${color}" rx="12" />
+      <text x="50%" y="50%" fill="white" font-size="20" text-anchor="middle" dominant-baseline="middle">
+        ${message}
+      </text>
+    </svg>
+  `;
+}
 
 app.get("/github", async (req, res) => {
   const username = req.query.user;
 
   if (!username) {
-    return res.send(`
-      <svg width="400" height="60">
-        <rect width="100%" height="100%" fill="red"/>
-        <text x="50%" y="50%" fill="white" font-size="20" text-anchor="middle" dominant-baseline="middle">
-          Error: ?user=username required
-        </text>
-      </svg>
-    `);
+    return res.type("image/svg+xml").send(errorSVG("Error: ?user=username required"));
   }
 
   try {
@@ -22,14 +26,11 @@ app.get("/github", async (req, res) => {
     const data = await response.json();
 
     if (data.message === "Not Found") {
-      return res.send(`
-        <svg width="400" height="60">
-          <rect width="100%" height="100%" fill="orange"/>
-          <text x="50%" y="50%" fill="white" font-size="20" text-anchor="middle" dominant-baseline="middle">
-            User not found
-          </text>
-        </svg>
-      `);
+      return res.type("image/svg+xml").send(errorSVG("User not found", "orange"));
+    }
+
+    if (data.message && data.message.includes("API rate limit")) {
+      return res.type("image/svg+xml").send(errorSVG("Rate limit exceeded", "purple"));
     }
 
     const svg = `
@@ -40,13 +41,12 @@ app.get("/github", async (req, res) => {
           <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stop-color="#ff8a00">
               <animate attributeName="stop-color"
-                values="#ff8a00; #e52e71; #9c27b0; #ff8a00"
+                values="#ff8a00;#e52e71;#9c27b0;#ff8a00"
                 dur="8s" repeatCount="indefinite" />
             </stop>
-
             <stop offset="100%" stop-color="#e52e71">
               <animate attributeName="stop-color"
-                values="#e52e71; #9c27b0; #ff8a00; #e52e71"
+                values="#e52e71;#9c27b0;#ff8a00;#e52e71"
                 dur="8s" repeatCount="indefinite" />
             </stop>
           </linearGradient>
@@ -72,11 +72,9 @@ app.get("/github", async (req, res) => {
         <text x="180" y="125" font-size="18" fill="white">
           ⭐ Repos: ${data.public_repos}
         </text>
-
         <text x="370" y="125" font-size="18" fill="white">
           👥 Followers: ${data.followers}
         </text>
-
         <text x="580" y="125" font-size="18" fill="white">
           🔂 Following: ${data.following}
         </text>
@@ -84,20 +82,23 @@ app.get("/github", async (req, res) => {
       </svg>
     `;
 
-    res.set("Content-Type", "image/svg+xml");
-    res.send(svg);
+    res.type("image/svg+xml").send(svg);
 
-  } catch (error) {
-    res.send("Server error");
+  } catch (err) {
+    res.type("image/svg+xml").send(errorSVG("Server error", "darkred"));
   }
 });
 
-
-//const PORT = process.env.PORT || 2000;
-//app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
+// Optional: root route for instructions
+app.get("/", (req, res) => {
+  res.send(`
+    <h2>GitHub SVG Card API</h2>
+    <p>Use <code>/github?user=USERNAME</code> to get a card.</p>
+    <p>Example: <a href="/github?user=octocat">/github?user=octocat</a></p>
+  `);
+});
 
 export default app;
-
 
 
 /*
