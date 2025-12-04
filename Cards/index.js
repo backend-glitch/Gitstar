@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
   res.send("SVG Gradient Card API is running...");
 });
 
-//ex: /card?title=Hello&color1=ff00ff&color2=00ffff
+//ex: /card?title=Hello&color1=pink&color2=purple
 app.get("/card", (req, res) => {
   const title = req.query.title || "My Gradient Card";
   const color1 = req.query.color1 || pink;
