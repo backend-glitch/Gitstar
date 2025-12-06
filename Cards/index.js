@@ -1,26 +1,23 @@
-
 import express from "express";
 import cors from "cors";
 
 const app = express();
 app.use(cors());
 
-// Prevent favicon.ico 404
 app.get("/favicon.ico", (req, res) => res.status(204).end());
 
 app.get("/", (req, res) => {
   res.send("SVG Gradient Card API is running...");
 });
 
-//ex: /card?title=Hello&color1=pink&color2=purple
 app.get("/card", (req, res) => {
   const title = req.query.title || "My Gradient Card";
-  const color1 = req.query.color1 || pink;
-  const color2 = req.query.color2 || purple;
-  const textcolor = req.query.textcolor || white;
+  const color1 = req.query.color1 || "pink";
+  const color2 = req.query.color2 || "purple";
+  const textcolor = req.query.textcolor || "white";
   const width = req.query.width || 450;
   const height = req.query.height || 140;
-  const family = req.query.family || cursive;
+  const family = req.query.family || "cursive";
 
   const svg = `
   <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
@@ -44,10 +41,12 @@ app.get("/card", (req, res) => {
   res.send(svg);
 });
 
+export default app;
+
+
+
 // const PORT = process.env.PORT || 4000;
 
 // app.listen(PORT, () => {
 //   console.log(`Server running at http://localhost:${PORT}`);
 // });
-
-export default app;
