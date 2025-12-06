@@ -45,10 +45,7 @@ app.get("/skills", (req, res) => {
           ${name}
         </text>
 
-        <!-- Percentage -->
-        <text x="300" y="22" fill="white" font-size="18" font-family="Arial">
-          ${level}%
-        </text>
+       
 
         <!-- Progress Bar Background -->
         <rect x="20" y="28" width="310" height="10" rx="5" fill="white" />
@@ -75,3 +72,9 @@ export default app;
 // app.listen(PORT, () => {
 //   console.log(`Server running at http://localhost:${PORT}`);
 // });
+
+
+ //<!-- Percentage -->
+        // <text x="300" y="22" fill="white" font-size="18" font-family="Arial">
+        //   ${level}%
+        // </text>
