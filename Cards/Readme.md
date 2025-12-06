@@ -3,12 +3,15 @@
 
 ## 📌 Query Parameters
 
-| Parameter | Required | Description |
-|----------|----------|-------------|
-| `title`  | Yes      | custom card |
-| `color1`  | yes      | custom color-1 |
-| `color2`   | yes      | custom color-2 |
-| `border`  | NO/Upcoming     | custom border |
+| Parameter | Required | Description | default |
+|----------|----------|-------------|----------|
+| `title`  | Yes      | custom card | hello💗world|
+| `color1`  | yes      | custom color-1 | pink |
+| `color2`   | yes      | custom color-2 | purple |
+| `width`  |  optional |  width | 450 |
+| `height` | optional | height |140 |
+|`font-family` | optional | family | cursive |
+|`text-color`| optional | textcolor | white |
 
 ## 🖼 Example Badge in README
 
