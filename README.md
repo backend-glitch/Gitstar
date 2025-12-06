@@ -23,8 +23,8 @@ You can check out my live projects and badges below!
 | **Countdown Badge** | Shows a countdown to any date. | <img src="https://gitstar-alpha.vercel.app/?date=2025-12-31&title=Countdown" /> |<p> https://gitstar-alpha.vercel.app/?date=2025-12-31&title=Countdown </p>|
 | **Cards** | Show your cool status on a gradient card. | <img src="https://gitstar-s9jh.vercel.app/card?title=Hello💗World&color1=pink&color2=red" />|<p>https://gitstar-s9jh.vercel.app/card?title=Hello💗World&color1=pink&color2=red </p>|
 | **Gcards** | personal porfoli card. | <img src = "https://gitstar-xcj1.vercel.app/github?user=backend-glitch&emoji=⛄"> |https://gitstar-xcj1.vercel.app/github?user=backend-glitch&emoji=⛄|
-| **README Streak Timer** | Counts days since a project started or until a goal. | *(Coming Soon)* |....|
-| **Custom JS / CSS Badge Generator** | Generate custom badges with your own label, color, and text. | *(Coming Soon)* |.....|
+| **Progress Bar** | Show your skills progress | <img src="https://gitstar-h2sl.vercel.app/skills?list=C:80:cyan,JS:60:yellow,python:40:green,java:70:red,RUST:25:orange" /> |https://gitstar-h2sl.vercel.app/skills?list=C:80:cyan,JS:60:yellow,python:40:green,java:70:red,RUST:25:orange|
+| ***README Streak Timer** | Generate custom badges with your own label, color, and text. | *(Coming Soon)* |.....|
 
 ---
 
