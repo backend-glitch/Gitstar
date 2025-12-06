@@ -17,9 +17,13 @@ app.get("/card", (req, res) => {
   const title = req.query.title || "My Gradient Card";
   const color1 = req.query.color1 || pink;
   const color2 = req.query.color2 || purple;
+  const textcolor = req.query.textcolor || white;
+  const width = req.query.width || 450;
+  const height = req.query.height || 140;
+  const family = req.query.family || cursive;
 
   const svg = `
-  <svg width="450" height="200" xmlns="http://www.w3.org/2000/svg">
+  <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
         <stop offset="0%" stop-color="${color1}" />
@@ -29,8 +33,8 @@ app.get("/card", (req, res) => {
 
     <rect width="100%" height="100%" rx="16" fill="url(#grad)" />
 
-    <text x="50%" y="55%" font-family="Verdana" font-size="28"
-      fill="#ffffff" text-anchor="middle">
+    <text x="50%" y="55%" font-family="${family}" font-size="28"
+      fill="${textcolor}" text-anchor="middle">
       ${title}
     </text>
   </svg>
