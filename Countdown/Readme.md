@@ -13,5 +13,5 @@
 ## 🖼 Example Badge in README
 
 ```md
-<img src="https://countdown-badge.vercel.app/?date=2025-01-01&title=New+Year" />
+<img src="https://gitstar-alpha.vercel.app/?date=2025-12-20&title=Holidays⛄" />
 
